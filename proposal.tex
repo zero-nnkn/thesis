@@ -1,0 +1,190 @@
+%Đây là template dùng cho đề cương đề tài tốt nghiệp
+%Khoa Công nghệ Thông tin
+%Trường Đại học Khoa học Tự nhiên, ĐHQG-HCM
+
+%Liên hệ về mẫu LaTEX này: Thầy Bùi Huy Thông (bhthong@fit.hcmus.edu.vn)
+
+\documentclass{article}[14pt]
+\usepackage[utf8]{inputenc}
+\usepackage[utf8]{vietnam}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage[a4paper, left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{fancyhdr}
+\usepackage{fancybox,framed}
+\linespread{1.3}
+\usepackage{lastpage}
+\usepackage{floatrow}
+\usepackage{floatrow}
+\pagenumbering{arabic}
+%\pagestyle{fancy}
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]
+
+\usepackage{blindtext}
+\usepackage{titlesec}
+\usepackage[nottoc]{tocbibind}
+
+\titleformat*{\section}{\LARGE\bfseries}
+\titleformat*{\subsection}{\Large\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
+% \addbibresource{content/references/references.bib}
+
+
+\begin{document}
+
+
+\begin{figure}[h]
+    \begin{floatrow}
+    \ffigbox{\includegraphics[scale = .4]{content/resources/images/logo-fit.png}}  
+    {%
+
+    }
+    \capbtabbox{
+        \begin{tabular}{l}
+        \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}UNIVERSITY OF SCIENCE\\FACULTY OF INFORMATION TECHNOLOGY\end{tabular}}} \\ \\ \\
+        \end{tabular}
+    }
+    {%
+
+    }
+    \end{floatrow}
+\end{figure}
+
+\begin{center}
+    
+    %Xác định loại đề tài tốt nghiệp tương ứng: Khóa luận, Thực tập, Đồ án
+    \textbf{\Large THESIS PROPOSAL} \\ 
+\end{center}
+
+%\vspace{.5cm}
+
+\begin{center}
+%Tên đề tài phải VIẾT HOA
+\textbf{\huge \bfseries INTELLIGENT FASHION \\ FOR E-COMMERCE \\[1cm]}
+    
+%Tên đề tài bằng tiếng Anh (nếu có)
+% \vspace{.5cm}
+    % \textit{\textbf{\Large (Tên Đề Tài bằng Tiếng Anh \footnote{Nếu có. Nếu không có thì xoá footnote này} )}}
+\end{center}
+
+\vspace{.5cm}
+
+\Large
+\section{General Information}
+\begin{itemize}[label = {}]
+    \item \textbf{Advisor:} 
+    %Thể hiện dạng: <Chức danh> <Họ và tên> (<Đơn vị công tác>)
+    \begin{itemize}
+        \item Dr. Lê Trung Nghĩa (Faculty of Information Technology)
+        \item Assoc. Prof. Trần Minh Triết (Faculty of Information Technology)
+    \end{itemize}{}
+
+    
+    \item \textbf{Students:}
+    
+    %Thể hiện dạng: <Họ và tên sinh viên> (MSSV: )
+    \begin{enumerate}
+    
+        \item Nguyễn Ngọc Khôi Nguyên (19120106) 
+        \item Phan Nguyễn Thanh Tùng (19120424)
+    \end{enumerate}
+
+   %Chọn loại thích hợp
+    \item \textbf{Category:} Research, with demo application
+    
+    \item \textbf{Duration:} from \textit{December, 2022} to \textit{June, 2023}
+    
+    
+\end{itemize}
+
+\pagebreak 
+
+\section{Content}
+
+%Mỗi mục dưới đây phải viết ít nhất là 5 câu mô tả/giới thiệu.
+
+\subsection{Introduction}
+The fashion industry is increasingly developing in terms of quantity and quality. Prior to purchasing a garment, customers tend to try them on. However, this fitting process has limitations such as time consumption, the risk of damaging the garments, unavailability of stock, and the need for customers to physically visit the store to try them on.
+
+To address this issue, researchers have proposed the "Virtual Try-On" concept to enable customers to see the results of trying on garments without physically going to the store. This idea has opened up various research directions, from 3D technology to augmented reality (AR) and visual feature-based methods.
+
+This thesis focuses on the "Visual Feature-based Virtual Try-On" approach. By utilizing deep learning networks, the method takes, as input, an image of a person's pose and combines it with the image of an available garment. The result is an image of the person wearing that particular clothing item. This approach allows customers to easily try on garments anywhere, saving time and enabling them to try out a wider range of clothing options.
+
+\subsection{Objectives}
+The research project of the student group focuses on the usability factor while still achieving high effectiveness. Specifically, the input only requires an image of a person and an image of the desired garment to try on. Most existing methods within this category prioritize generating visually appealing try-on images, even if it requires sacrificing processing time. This demands significant hardware capabilities for real-world implementation, thus making widespread application challenging.
+
+Therefore, this thesis aims to develop solutions that improve computational speed while maintaining good output quality. The objective is to achieve fast processing while ensuring satisfactory output. These results will enable individuals to easily try on garments from fashion stores using a mobile phone or computer, regardless of location. Additionally, this method can pave the way for new avenues of research in visual feature-based virtual try-on.
+
+\subsection{Scope}
+
+The research project focuses on the direction of "Virtual Try-On", with input consisting of an upper-body image of a person and an image of a garment. The output is an image of the person in the input image wearing that particular garment. The objective is to achieve fast processing speed while maintaining comparable try-on results to existing methods.
+
+
+\subsection{Method}
+
+Research on visual feature-based virtual try-on has attracted significant attention in recent years due to its wide-ranging applications in the fashion industry. Prominent studies such as VITON~\cite{Han-CVPR2018-Viton}, CP-VTON~\cite{Wang-ECCV2018-Toward}, ClothFlow~\cite{Han-ICCV2019-Clothflow}, ACGPN~\cite{Yang-CVPR2020-Towards} work by segmenting the human body into different parts (such as head, hair, arms, upper body, lower body) and/or predicting body joint connections (pose estimation) to enable deep learning models to transform the input garments to fit the body shape appropriately. However, if the segmentation or pose estimation process encounters issues, it can lead to inaccurate virtual try-on results. Moreover, body segmentation algorithms are highly complex, resulting in a significant increase in computational speed.
+
+To address these limitations, recent studies such as như WUTON~\cite{Issenhuth-ECCV2020-Do}, PFAFN~\cite{Ge-CVPR2021-Parser}, Flow-Style-VTON~\cite{He-CVPR2022-Style} have proposed a second approach: utilizing information solely from the person and the clothing images during the virtual try-on image generation process, without the need for segmentation results.
+
+Due to the complex model structure and processing steps involved in the first approach (requiring preprocessing for segmentation and pose estimation), this dissertation will primarily adopt the second approach to construct a simpler virtual try-on system. The objective is to provide a solution that balances aesthetic quality and algorithm processing speed, establishing a foundation for practical applications. The proposed solution is expected to utilize a deep learning model, followed by parameter adjustments to achieve the most balanced results in terms of quality and speed.
+
+
+\subsection{Expected Results}
+The expected outcomes of this thesis include the following:
+\begin{itemize}
+    \item Experimental results on the accuracy, runtime as well as size of the model.
+    \item The prototype that allows users to generate try-on photos from models and outfits.
+    % \item Bài báo khoa học trình bày các kết quả của đề tài về thử đồ ảo.
+\end{itemize}
+
+\subsection{Research timeline}
+    
+% Phần này mô tả về kế hoạch thực hiện (với các mốc thời gian tương ứng) cùng với việc phân chia công việc cho các thành viên tham gia đề tài. \textit{(Nên thể hiện dưới dạng bảng biểu)}
+
+\begin{center}    
+    \begin{tabular}{|p{8.5cm}|p{4cm}|p{3.5cm}|}
+        \hline
+        \textbf{Activity} & \textbf{Duration} & \textbf{Assigned to} \\ 
+        \hline
+        Conduct research for recent methods of using deep learning networks for virtual matching problems & December 2022 - February 2023 & Nguyên - Tùng \\
+        \hline
+         Improved algorithm results on images & March - April 2023 & Nguyên \\
+        \hline
+         Improved algorithm processing speed & March - April 2023 & Tùng \\
+         \hline
+         Run experiments and compare with recent methods & April - May 2023 & Nguyên - Tùng \\
+        \hline
+        Develop an virtual try-on application & June 2023 & Nguyên - Tùng \\ 
+        \hline
+    \end{tabular}
+\end{center}
+
+\pagebreak 
+%TÀI LIỆU TRÍCH DẪN
+%Đây là ví dụ
+\bibliographystyle{ieeetr}
+\bibliography{references/references}
+% \nocite{*}
+
+% \begin{table}[h]
+% \centering
+%     \begin{tabular}{p{7cm}p{7cm}}
+%     \textbf{\begin{tabular}[c]{@{}c@{}}\\ADVISOR\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}\textit{April 4\textsuperscript{th}, 2022}\\STUDENTS\end{tabular}}
+%     \end{tabular}
+% \end{table}
+\begin{table}[h]
+    \begin{tabular}{p{0.3\textwidth} p{0.15\textwidth} p{0.3\textwidth}}
+    \multicolumn{1}{c}{\textbf{Approved by the advisor}} & & \multicolumn{1}{c}{\textbf{Ho Chi Minh City, April 4\textsuperscript{th}, 2023}}       \\
+    \multicolumn{1}{c}{\textit{\textbf{Signatures of advisors}}} & & \multicolumn{1}{c}{\textit{\textbf{Signatures of students}}} \\ & & \\ & & \\ & & \\ & & \\ 
+    \multicolumn{1}{c}{Lê Trung Nghĩa \: Trần Minh Triết} & & \multicolumn{1}{c}{\: Nguyễn Ngọc Khôi Nguyên \: Phan Nguyễn Thanh Tùng}      
+    \end{tabular}
+\end{table}
+    
+\end{document}
+
+
